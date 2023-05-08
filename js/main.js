@@ -16,14 +16,17 @@ function controllaTutto() {
     // Prendo valore inserito da utente dentro INPUT
     const parolaRichiesta = document.getElementById("richiestaParola").value;
     console.log("La parola inserita dall'utente è:", parolaRichiesta);
+    document.getElementById("parolaInserita").innerHTML = "La parola inserita dall'utente è: " + parolaRichiesta;
     
     // Rendo "parolaRichiestaInvertita" il RISULTATO della funzione "invertiParola"
     let parolaRichiestaInvertita = invertiParola(parolaRichiesta);
 
     if (parolaRichiesta === parolaRichiestaInvertita){   // SE uguale
         console.log('La parola è palindroma');
+        document.getElementById("esito").innerHTML = "La parola è palindroma";
     } else {                                             // ALTRIMENTI
         console.log('La parola NON è palindroma');
+        document.getElementById("esito").innerHTML = "La parola NON è palindroma";
     }
 
     // Funzione "invertiParola"
@@ -48,6 +51,7 @@ function controllaTutto() {
         // FORMULA ABBREVIATA
         let parolaInvertita = parolaDaInvertire.split("").reverse().join("");
         console.log("La parola, invertita, è:", parolaInvertita);
+        document.getElementById("parolaRibaltata").innerHTML = "La parola, invertita, è: " + parolaInvertita;
 
         return parolaInvertita;
 
